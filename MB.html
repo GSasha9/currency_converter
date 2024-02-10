@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+    
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <label for="date">Дата:</label><input type="date" id="date" name="date" oninput="changeDate()">
+        <button id="buttonCourses">ВВОД КУРСОВ</button>
+        <h1>МОЙ БАНК</h1>
+    </div>
+    <div class="line"></div>
+
+    <div class="apps_body">
+        <label for="input_data__addCurrency" id="plus"><span id="plus_sp">+</span>
+        <span>добавить валюту</span></label>
+        <input type="checkbox" id="input_data__addCurrency" value="yes">
+
+        <fieldset>
+            <label>сумма
+                <input type="number" name ="summa" class="summa" step="0.01" min="0" placeholder="000 000.00" oninput="convertToByn(this)">
+            </label>
+
+            <label class="label_for_currency">вид
+                <input list="type_of_currency" class="currency" placeholder="USD" oninput="convertToByn(this)">
+                    <datalist id="type_of_currency">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>RUB</option>
+                    </datalist>
+            </label>
+
+            <label class="label_exchange_rate">курс
+                <input type="number" class="exchange_rate" name = "exchange_rate" step="0.01" min="0" placeholder="0.00" oninput="convertToByn(this)">
+            </label>
+
+            <div class="total_byn">в бел руб<span></span>
+            </div>
+            <p class="cross" onclick="delFieldset(this)">&#10006;</p>
+        </fieldset>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="total">
+        <p>ИТОГО:</p>
+        <button id="byn" class="active">Б.РУБ</button>
+        <button id="usd">$</button>
+        <button id="euro">&#8364;</button>
+        <span></span>
+        <button id="save" onclick="save()">ЗАПОМНИТЬ</button>
+
+
+
+
+    </div>
+
+
+
+
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>
